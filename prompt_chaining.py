@@ -30,8 +30,7 @@ def get_outline(state: State) -> State:
         "cause analysis, solutions, and trend assessment."
     )
     state["outline"] = model.invoke(prompt).content
-    print("outline  " + "*" * 80)
-    print(state["outline"])
+
     return state
 
 
@@ -43,8 +42,6 @@ def get_draft(state: State) -> State:
         f"[Outline]\n{state['outline']}"
     )
     state["draft"] = model.invoke(prompt).content
-    print("draft  " + "*" * 80)
-    print(state["draft"])
     return state
 
 
@@ -57,8 +54,6 @@ def get_paper(state: State) -> State:
         f"[Analysis Report]\n{state['draft']}"
     )
     state["paper"] = model.invoke(prompt).content
-    print("paper  " + "*" * 80)
-    print(state["paper"])
     return state
 
 
@@ -80,5 +75,4 @@ if __name__ == "__main__":
 
     state: State = {"topic": "Report on the drug crisis in Mexico"}
     result = graph.invoke(state)
-    print("final  " + "*" * 80)
     print(result)

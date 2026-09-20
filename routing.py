@@ -26,9 +26,6 @@ Only output the name of the school. Do not output any other characters."""
 
     state["faction"] = model.invoke(prompt).content
 
-    print("faction  " + "*" * 80)
-    print(state["faction"])
-
     return state
 
 
@@ -50,8 +47,6 @@ This is a Confucian viewpoint. Please use Confucian philosophy to provide a deta
 
     state["debate"] = model.invoke(prompt).content
 
-    print(state["debate"])
-
     return state
 
 
@@ -62,8 +57,6 @@ This is a Legalist viewpoint. Please use Legalist philosophy to provide a detail
 
     state["debate"] = model.invoke(prompt).content
 
-    print(state["debate"])
-
     return state
 
 
@@ -73,8 +66,6 @@ You believe that the viewpoint " """ + state["topic"] + """ " is """ + state["as
 This is a Taoist viewpoint. Please use Taoist philosophy to provide a detailed argument on this topic."""
 
     state["debate"] = model.invoke(prompt).content
-
-    print(state["debate"])
 
     return state
 
@@ -117,6 +108,4 @@ if __name__ == "__main__":
     }
 
     result = graph.invoke(state)
-
-    print("final  " + "*" * 80)
     print(result)
