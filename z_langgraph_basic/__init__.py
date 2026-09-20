@@ -1,3 +1,3 @@
-from . import showGraph
+from . import show_graph
 
-__all__ = ["showGraph"]
+__all__ = ["show_graph.py"]

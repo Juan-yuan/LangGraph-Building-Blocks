@@ -6,7 +6,7 @@ from langgraph.graph import END, START, StateGraph
 from typing_extensions import TypedDict
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from z_langgraph_basic import showGraph
+from z_langgraph_basic import show_graph
 
 
 class State(TypedDict):
@@ -76,7 +76,7 @@ def build_graph():
 
 if __name__ == "__main__":
     graph = build_graph()
-    showGraph.show_graph_in_code(graph, "graph.jpg")
+    show_graph.show_graph_in_code(graph, "graph.jpg")
 
     state: State = {"topic": "Report on the drug crisis in Mexico"}
     result = graph.invoke(state)
