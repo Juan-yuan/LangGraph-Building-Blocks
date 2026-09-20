@@ -53,9 +53,6 @@ def getWholeStory(state):
 
     state["storyLine"] = model.invoke(prompt).content
 
-    print("storyLine  " + "*" * 80)
-    print(state["storyLine"])
-
     return state
 
 
@@ -73,8 +70,6 @@ def orchestrate(state):
     )
 
     state["sections"] = result.sections
-
-    print("sections  " + "*" * 80)
 
     for section in state["sections"]:
         print(str(section.name + "        " + section.description))
@@ -170,5 +165,4 @@ if __name__ == "__main__":
 
     result = graph.invoke(state)
 
-    print("final  " + "*" * 80)
     print(result["novel"])
